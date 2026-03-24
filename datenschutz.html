@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutzerklärung – Lasse Ketelsen Haus und Hof Service</title>
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            stone:   { dark: '#141C1A', DEFAULT: '#1E2B28', mid: '#2C3D39', light: '#3D524D' },
+            sand:    { dark: '#A89068', DEFAULT: '#C8B48A', light: '#E2D5B8', pale: '#F4F0E8' },
+            terra:   { dark: '#7A4228', DEFAULT: '#A85C3A', light: '#C47A58' },
+            cream:   '#F4F0E8',
+          },
+          fontFamily: {
+            display: ['"Bebas Neue"', 'system-ui', 'sans-serif'],
+            body:    ['"Source Sans 3"', 'system-ui', 'sans-serif'],
+          },
+          letterSpacing: { widest2: '0.25em' }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { font-family: 'Source Sans 3', system-ui, sans-serif; }
+    h1, h2, h3, .font-display { font-family: 'Bebas Neue', system-ui, sans-serif; }
+    #site-header.scrolled { background: rgba(20,28,26,0.97); backdrop-filter: blur(12px); }
+    .nav-link { position: relative; color: rgba(255,255,255,0.75); transition: color 0.2s ease; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 2px; background: #C8B48A;
+      transition: width 0.25s ease;
+    }
+    .nav-link:hover { color: #fff; }
+    .nav-link:hover::after { width: 100%; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+
+<body class="font-body bg-cream text-stone-dark antialiased overflow-x-hidden">
+
+  <!-- ══════════════════════════════════════════
+       STICKY HEADER
+  ══════════════════════════════════════════ -->
+  <header id="site-header" class="sticky top-0 z-50 bg-stone-dark transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+      <div class="flex items-center justify-between h-16 lg:h-[72px]">
+
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 cursor-pointer flex-shrink-0 group" aria-label="Lasse Ketelsen Haus und Hof Service – zur Startseite">
+          <div class="w-9 h-9 border-2 border-sand flex items-center justify-center flex-shrink-0 transition-colors duration-200 group-hover:bg-sand/10">
+            <span class="font-display text-sand text-base leading-none tracking-widest select-none">LK</span>
+          </div>
+          <div class="hidden sm:block leading-tight">
+            <div class="text-white font-semibold text-sm tracking-wide">Haus &amp; Hof Service</div>
+            <div class="text-sand text-[10px] font-semibold tracking-widest2 uppercase">Lasse Ketelsen</div>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center gap-8 xl:gap-10" aria-label="Hauptnavigation">
+          <a href="index.html#start"      class="nav-link text-sm font-medium tracking-wide cursor-pointer">Startseite</a>
+          <a href="index.html#leistungen" class="nav-link text-sm font-medium tracking-wide cursor-pointer">Leistungen</a>
+          <a href="index.html#ueber-uns"  class="nav-link text-sm font-medium tracking-wide cursor-pointer">Über uns</a>
+          <a href="index.html#referenzen" class="nav-link text-sm font-medium tracking-wide cursor-pointer">Referenzen</a>
+          <a href="index.html#kontakt"    class="nav-link text-sm font-medium tracking-wide cursor-pointer">Kontakt</a>
+        </nav>
+
+        <!-- Desktop CTA -->
+        <a href="index.html#kontakt" class="hidden lg:flex items-center gap-2 bg-terra text-white px-5 py-2.5 font-semibold text-sm tracking-wide hover:bg-terra-light transition-colors duration-200 cursor-pointer flex-shrink-0">
+          Angebot anfordern
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+
+        <!-- Mobile hamburger -->
+        <button id="burger-btn" class="lg:hidden p-2 text-white cursor-pointer rounded" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+          <svg id="icon-open"  class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-stone-dark border-t border-sand/10" role="navigation" aria-label="Mobile Navigation">
+      <div class="max-w-7xl mx-auto px-5 py-4 flex flex-col gap-1">
+        <a href="index.html#start"      class="text-white/80 hover:text-white hover:bg-white/5 px-4 py-3 text-sm font-medium tracking-wide transition-colors duration-200 cursor-pointer rounded">Startseite</a>
+        <a href="index.html#leistungen" class="text-white/80 hover:text-white hover:bg-white/5 px-4 py-3 text-sm font-medium tracking-wide transition-colors duration-200 cursor-pointer rounded">Leistungen</a>
+        <a href="index.html#ueber-uns"  class="text-white/80 hover:text-white hover:bg-white/5 px-4 py-3 text-sm font-medium tracking-wide transition-colors duration-200 cursor-pointer rounded">Über uns</a>
+        <a href="index.html#referenzen" class="text-white/80 hover:text-white hover:bg-white/5 px-4 py-3 text-sm font-medium tracking-wide transition-colors duration-200 cursor-pointer rounded">Referenzen</a>
+        <a href="index.html#kontakt"    class="text-white/80 hover:text-white hover:bg-white/5 px-4 py-3 text-sm font-medium tracking-wide transition-colors duration-200 cursor-pointer rounded">Kontakt</a>
+        <div class="pt-3 pb-2">
+          <a href="index.html#kontakt" class="flex items-center justify-center gap-2 bg-terra text-white px-5 py-3.5 font-semibold text-sm tracking-wide hover:bg-terra-light transition-colors duration-200 cursor-pointer">
+            Angebot anfordern
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ══════════════════════════════════════════
+       PAGE HEADER BAND
+  ══════════════════════════════════════════ -->
+  <div class="bg-sand-pale border-b border-sand/30 py-10 sm:py-14">
+    <div class="max-w-4xl mx-auto px-5 sm:px-8 lg:px-10">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-6 h-px bg-terra flex-shrink-0"></div>
+        <span class="text-terra text-[11px] font-semibold tracking-widest2 uppercase">Rechtliches</span>
+      </div>
+      <h1 class="font-display text-stone-dark text-4xl sm:text-5xl tracking-wide">Datenschutzerklärung</h1>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       CONTENT
+  ══════════════════════════════════════════ -->
+  <main class="py-14 sm:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Back link -->
+      <a href="index.html" class="inline-flex items-center gap-2 text-terra hover:text-terra-light text-sm font-semibold tracking-wide transition-colors duration-200 mb-12">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/>
+        </svg>
+        Zurück zur Startseite
+      </a>
+
+      <div class="space-y-10">
+
+        <!-- 1. Verantwortlicher -->
+        <section>
+          <h2 class="font-display text-stone-dark text-2xl tracking-wide mb-4 pb-2 border-b border-sand/40">
+            1. Verantwortlicher
+          </h2>
+          <p class="text-anthracite/80 text-sm leading-relaxed mb-3">
+            Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:
+          </p>
+          <address class="not-italic text-anthracite/80 text-sm leading-loose bg-warm-white px-5 py-4 border-l-2 border-sand">
+            <strong class="text-anthracite font-semibold">Lasse Ketelsen</strong><br>
+            Horsbüller Str. 18<br>
+            25924 Emmelsbüll-Horsbüll<br><br>
+            Telefon: <a href="tel:+4904665229894" class="hover:text-prussian transition-colors duration-200">04665 / 2209894</a><br>
+            E-Mail: <a href="mailto:info@lk-hausundhof.de" class="hover:text-prussian transition-colors duration-200">info@lk-hausundhof.de</a>
+          </address>
+        </section>
+
+        <!-- 2. Allgemeine Hinweise -->
+        <section>
+          <h2 class="font-display text-stone-dark text-2xl tracking-wide mb-4 pb-2 border-b border-sand/40">
+            2. Allgemeine Hinweise zur Datenverarbeitung
+          </h2>
+          <p class="text-anthracite/80 text-sm leading-relaxed mb-3">
+            Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
+          </p>
+          <p class="text-anthracite/80 text-sm leading-relaxed mb-3">
+            Die Nutzung unserer Website ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis.
+          </p>
+          <p class="text-anthracite/80 text-sm leading-relaxed">
+            Diese Website nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://" auf „https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.
+          </p>
+        </section>
+
+        <!-- 3. Server-Logfiles -->
+        <section>
+          <h2 class="font-display text-stone-dark text-2xl tracking-wide mb-4 pb-2 border-b border-sand/40">
+            3. Server-Logfiles
+          </h2>
+          <p class="text-anthracite/80 text-sm leading-relaxed mb-3">
+            Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Logfiles, die Ihr Browser automatisch an uns übermittelt. Dies sind:
+          </p>
+          <ul class="text-anthracite/80 text-sm leading-loose list-disc list-inside mb-3 space-y-1 pl-2">
+            <li>Browsertyp und Browserversion</li>
+            <li>verwendetes Betriebssystem</li>
+            <li>Referrer URL</li>
+            <li>Hostname des zugreifenden Rechners</li>
+            <li>Uhrzeit der Serveranfrage</li>
+            <li>IP-Adresse</li>
+          </ul>
+          <p class="text-anthracite/80 text-sm leading-relaxed">
+            Diese Daten werden nicht mit anderen Datenquellen zusammengeführt. Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und der Optimierung seiner Website – hierzu müssen die Server-Logfiles erfasst werden.
+          </p>
+        </section>
+
+        <!-- 4. Kontaktformular -->
+        <section>
+          <h2 class="font-display text-stone-dark text-2xl tracking-wide mb-4 pb-2 border-b border-sand/40">
+            4. Kontaktformular und Kontaktaufnahme per E-Mail
+          </h2>
+          <p class="text-anthracite/80 text-sm leading-relaxed mb-3">
+            Wenn Sie uns per Kontaktformular oder E-Mail Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular bzw. Ihrer E-Mail inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+          </p>
+          <p class="text-anthracite/80 text-sm leading-relaxed mb-3">
+            Die Verarbeitung der in das Kontaktformular eingegebenen Daten erfolgt somit ausschließlich auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können diese Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitungsvorgänge bleibt vom Widerruf unberührt.
+          </p>
+          <p class="text-anthracite/80 text-sm leading-relaxed">
+            Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.
+          </p>
+        </section>
+
+        <!-- 5. Google Fonts -->
+        <section>
+          <h2 class="font-display text-stone-dark text-2xl tracking-wide mb-4 pb-2 border-b border-sand/40">
+            5. Google Fonts
+          </h2>
+          <p class="text-anthracite/80 text-sm leading-relaxed mb-3">
+            Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten sogenannte Google Fonts, die von Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA bereitgestellt werden.
+          </p>
+          <p class="text-anthracite/80 text-sm leading-relaxed mb-3">
+            Beim Aufruf einer Seite lädt Ihr Browser die benötigten Fonts in Ihren Browsercache, um Texte und Schriftarten korrekt anzuzeigen. Zu diesem Zweck muss der von Ihnen verwendete Browser Verbindung zu den Servern von Google aufnehmen. Hierdurch erlangt Google Kenntnis darüber, dass über Ihre IP-Adresse diese Website aufgerufen wurde.
+          </p>
+          <p class="text-anthracite/80 text-sm leading-relaxed mb-3">
+            Die Nutzung von Google Fonts erfolgt im Interesse einer einheitlichen und ansprechenden Darstellung unserer Online-Angebote. Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar. Wenn Ihr Browser Google Fonts nicht unterstützt, wird eine Standardschrift von Ihrem Computer genutzt.
+          </p>
+          <p class="text-anthracite/80 text-sm leading-relaxed">
+            Weitere Informationen zu Google Fonts finden Sie unter
+            <a href="https://developers.google.com/fonts/faq" target="_blank" rel="noopener noreferrer" class="text-prussian hover:text-prussian-light underline underline-offset-2 transition-colors duration-200">https://developers.google.com/fonts/faq</a>
+            und in der Datenschutzerklärung von Google:
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-prussian hover:text-prussian-light underline underline-offset-2 transition-colors duration-200">https://policies.google.com/privacy</a>.
+          </p>
+        </section>
+
+        <!-- 6. Google Analytics -->
+        <section>
+          <h2 class="font-display text-stone-dark text-2xl tracking-wide mb-4 pb-2 border-b border-sand/40">
+            6. Google Analytics
+          </h2>
+          <p class="text-anthracite/80 text-sm leading-relaxed mb-3">
+            Diese Website nutzt Funktionen des Webanalysedienstes Google Analytics. Anbieter ist die Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA.
+          </p>
+          <p class="text-anthracite/80 text-sm leading-relaxed mb-3">
+            Google Analytics verwendet sogenannte „Cookies". Das sind Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglichen. Die durch den Cookie erzeugten Informationen über Ihre Benutzung dieser Website werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert.
+          </p>
+          <p class="text-anthracite/80 text-sm leading-relaxed mb-3">
+            Die Speicherung von Google-Analytics-Cookies und die Nutzung dieses Analyse-Tools erfolgen auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der Analyse des Nutzerverhaltens, um sowohl sein Webangebot als auch seine Werbung zu optimieren.
+          </p>
+
+          <h3 class="text-prussian text-base font-semibold mb-3 mt-5">IP-Anonymisierung</h3>
+          <p class="text-anthracite/80 text-sm leading-relaxed mb-3">
+            Wir haben auf dieser Website die Funktion IP-Anonymisierung aktiviert. Dadurch wird Ihre IP-Adresse von Google innerhalb von Mitgliedstaaten der Europäischen Union oder in anderen Vertragsstaaten des Abkommens über den Europäischen Wirtschaftsraum vor der Übermittlung in die USA gekürzt. Nur in Ausnahmefällen wird die volle IP-Adresse an einen Server von Google in den USA übertragen und dort gekürzt.
+          </p>
+
+          <h3 class="text-prussian text-base font-semibold mb-3 mt-5">Browser-Plugin (Opt-Out)</h3>
+          <p class="text-anthracite/80 text-sm leading-relaxed mb-3">
+            Sie können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern. Sie können darüber hinaus die Erfassung der durch den Cookie erzeugten und auf Ihre Nutzung der Website bezogenen Daten (inkl. Ihrer IP-Adresse) an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem Sie das unter dem folgenden Link verfügbare Browser-Plugin herunterladen und installieren:
+            <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank" rel="noopener noreferrer" class="text-prussian hover:text-prussian-light underline underline-offset-2 transition-colors duration-200">https://tools.google.com/dlpage/gaoptout?hl=de</a>.
+          </p>
+          <p class="text-anthracite/80 text-sm leading-relaxed">
+            Mehr Informationen zum Umgang mit Nutzerdaten bei Google Analytics finden Sie in der Datenschutzerklärung von Google:
+            <a href="https://support.google.com/analytics/answer/6004245" target="_blank" rel="noopener noreferrer" class="text-prussian hover:text-prussian-light underline underline-offset-2 transition-colors duration-200">https://support.google.com/analytics/answer/6004245</a>.
+          </p>
+        </section>
+
+        <!-- 7. Betroffenenrechte -->
+        <section>
+          <h2 class="font-display text-stone-dark text-2xl tracking-wide mb-4 pb-2 border-b border-sand/40">
+            7. Ihre Rechte als betroffene Person
+          </h2>
+          <p class="text-anthracite/80 text-sm leading-relaxed mb-5">
+            Sie haben gegenüber uns folgende Rechte hinsichtlich der Sie betreffenden personenbezogenen Daten:
+          </p>
+
+          <div class="space-y-4">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-6 h-6 bg-sand/30 flex items-center justify-center mt-0.5">
+                <span class="text-prussian font-bold text-xs">§</span>
+              </div>
+              <div>
+                <p class="text-anthracite text-sm font-semibold mb-1">Recht auf Auskunft (Art. 15 DSGVO)</p>
+                <p class="text-anthracite/70 text-sm leading-relaxed">Sie haben das Recht, eine Bestätigung darüber zu verlangen, ob Sie betreffende Daten verarbeitet werden, sowie Auskunft über diese Daten und weitere Informationen gemäß Art. 15 DSGVO zu erhalten.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-6 h-6 bg-sand/30 flex items-center justify-center mt-0.5">
+                <span class="text-prussian font-bold text-xs">§</span>
+              </div>
+              <div>
+                <p class="text-anthracite text-sm font-semibold mb-1">Recht auf Berichtigung (Art. 16 DSGVO)</p>
+                <p class="text-anthracite/70 text-sm leading-relaxed">Sie haben das Recht, die Berichtigung unrichtiger oder die Vervollständigung unvollständiger personenbezogener Daten zu verlangen.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-6 h-6 bg-sand/30 flex items-center justify-center mt-0.5">
+                <span class="text-prussian font-bold text-xs">§</span>
+              </div>
+              <div>
+                <p class="text-anthracite text-sm font-semibold mb-1">Recht auf Löschung (Art. 17 DSGVO)</p>
+                <p class="text-anthracite/70 text-sm leading-relaxed">Sie haben das Recht, die Löschung Ihrer personenbezogenen Daten zu verlangen, sofern die gesetzlichen Voraussetzungen vorliegen.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-6 h-6 bg-sand/30 flex items-center justify-center mt-0.5">
+                <span class="text-prussian font-bold text-xs">§</span>
+              </div>
+              <div>
+                <p class="text-anthracite text-sm font-semibold mb-1">Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</p>
+                <p class="text-anthracite/70 text-sm leading-relaxed">Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-6 h-6 bg-sand/30 flex items-center justify-center mt-0.5">
+                <span class="text-prussian font-bold text-xs">§</span>
+              </div>
+              <div>
+                <p class="text-anthracite text-sm font-semibold mb-1">Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</p>
+                <p class="text-anthracite/70 text-sm leading-relaxed">Sie haben das Recht, die Sie betreffenden personenbezogenen Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-6 h-6 bg-sand/30 flex items-center justify-center mt-0.5">
+                <span class="text-prussian font-bold text-xs">§</span>
+              </div>
+              <div>
+                <p class="text-anthracite text-sm font-semibold mb-1">Widerspruchsrecht (Art. 21 DSGVO)</p>
+                <p class="text-anthracite/70 text-sm leading-relaxed">Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung der Sie betreffenden personenbezogenen Daten Widerspruch einzulegen.</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-anthracite/80 text-sm leading-relaxed mt-5">
+            Zur Ausübung Ihrer Rechte wenden Sie sich bitte an:<br>
+            <a href="mailto:info@lk-hausundhof.de" class="text-prussian hover:text-prussian-light underline underline-offset-2 transition-colors duration-200">info@lk-hausundhof.de</a>
+          </p>
+        </section>
+
+        <!-- 8. Beschwerderecht -->
+        <section>
+          <h2 class="font-display text-stone-dark text-2xl tracking-wide mb-4 pb-2 border-b border-sand/40">
+            8. Beschwerderecht bei der Aufsichtsbehörde
+          </h2>
+          <p class="text-anthracite/80 text-sm leading-relaxed mb-3">
+            Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten durch uns zu beschweren. Die für uns zuständige Aufsichtsbehörde ist:
+          </p>
+          <address class="not-italic text-anthracite/80 text-sm leading-loose bg-warm-white px-5 py-4 border-l-2 border-sand">
+            <strong class="text-anthracite font-semibold">Unabhängiges Landeszentrum für Datenschutz Schleswig-Holstein (ULD)</strong><br>
+            Holstenstraße 98<br>
+            24103 Kiel<br><br>
+            Telefon: 0431 988-1200<br>
+            E-Mail: <a href="mailto:mail@datenschutzzentrum.de" class="hover:text-prussian transition-colors duration-200">mail@datenschutzzentrum.de</a><br>
+            Website: <a href="https://www.datenschutzzentrum.de" target="_blank" rel="noopener noreferrer" class="hover:text-prussian transition-colors duration-200">www.datenschutzzentrum.de</a>
+          </address>
+        </section>
+
+        <!-- Stand -->
+        <p class="text-anthracite/40 text-xs pt-4 border-t border-sand/20">
+          Stand: März 2026
+        </p>
+
+      </div>
+    </div>
+  </main>
+
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer class="bg-stone-dark border-t border-sand/10 text-white" aria-label="Seitenfu&szlig;">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-12 sm:py-16">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+
+        <!-- Col 1: Brand -->
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-9 h-9 border-2 border-sand/40 flex items-center justify-center flex-shrink-0">
+              <span class="font-display text-sand text-base leading-none tracking-widest select-none">LK</span>
+            </div>
+            <div class="leading-tight">
+              <div class="text-white font-semibold text-sm tracking-wide">Haus &amp; Hof Service</div>
+              <div class="text-sand/60 text-[10px] font-semibold tracking-widest2 uppercase">Lasse Ketelsen</div>
+            </div>
+          </div>
+          <p class="text-white/40 text-sm font-light leading-relaxed mb-5 italic">Ehrliches Handwerk. Nordfriesisch.</p>
+          <address class="not-italic text-white/35 text-sm font-light leading-loose">
+            Horsbüller Str. 18<br>25924 Emmelsbüll-Horsbüll<br>Schleswig-Holstein
+          </address>
+        </div>
+
+        <!-- Col 2: Nav -->
+        <div>
+          <h3 class="text-white/60 font-semibold text-[10px] tracking-widest2 uppercase mb-5">Leistungen</h3>
+          <nav aria-label="Footer-Navigation">
+            <ul class="space-y-2.5">
+              <li><a href="index.html#leistungen" class="text-white/40 hover:text-sand text-sm font-light transition-colors duration-200 cursor-pointer">Naturstein &amp; Friesenwälle</a></li>
+              <li><a href="index.html#leistungen" class="text-white/40 hover:text-sand text-sm font-light transition-colors duration-200 cursor-pointer">Baggerarbeiten &amp; Erdarbeiten</a></li>
+              <li><a href="index.html#leistungen" class="text-white/40 hover:text-sand text-sm font-light transition-colors duration-200 cursor-pointer">Gartenbau &amp; Hofgestaltung</a></li>
+              <li><a href="index.html#referenzen" class="text-white/40 hover:text-sand text-sm font-light transition-colors duration-200 cursor-pointer">Referenzen</a></li>
+              <li><a href="index.html#kontakt"    class="text-white/40 hover:text-sand text-sm font-light transition-colors duration-200 cursor-pointer">Kontakt &amp; Beratung</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Col 3: Contact -->
+        <div>
+          <h3 class="text-white/60 font-semibold text-[10px] tracking-widest2 uppercase mb-5">Kontakt</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-terra mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+              <a href="tel:+4904665229894" class="text-white/40 hover:text-sand text-sm font-light transition-colors duration-200 cursor-pointer">04665&nbsp;/&nbsp;2209894</a>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-terra mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+              <a href="mailto:info@lk-hausundhof.de" class="text-white/40 hover:text-sand text-sm font-light transition-colors duration-200 cursor-pointer">info@lk-hausundhof.de</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <span class="text-white/25 text-xs font-light">&copy; 2026 Lasse Ketelsen Haus und Hof Service</span>
+        <div class="flex items-center gap-6">
+          <a href="impressum.html" class="text-white/25 hover:text-white/55 text-xs font-light transition-colors duration-200 cursor-pointer">Impressum</a>
+          <span class="text-white/70 text-xs font-semibold">Datenschutzerklärung</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ══════════════════════════════════════════
+       JAVASCRIPT
+  ══════════════════════════════════════════ -->
+  <script>
+    const burgerBtn  = document.getElementById('burger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen   = document.getElementById('icon-open');
+    const iconClose  = document.getElementById('icon-close');
+
+    function openMenu() {
+      mobileMenu.classList.remove('hidden');
+      iconOpen.classList.add('hidden');
+      iconClose.classList.remove('hidden');
+      burgerBtn.setAttribute('aria-expanded', 'true');
+      burgerBtn.setAttribute('aria-label', 'Menü schließen');
+    }
+    function closeMenu() {
+      mobileMenu.classList.add('hidden');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+      burgerBtn.setAttribute('aria-expanded', 'false');
+      burgerBtn.setAttribute('aria-label', 'Menü öffnen');
+    }
+
+    burgerBtn.addEventListener('click', () => {
+      mobileMenu.classList.contains('hidden') ? openMenu() : closeMenu();
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('shadow-lg', window.scrollY > 12);
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
