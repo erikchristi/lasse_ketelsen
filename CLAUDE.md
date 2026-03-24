@@ -1,79 +1,54 @@
-# CLAUDE.md
+# CLAUDE.md — Frontend Website Rules
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+## Always Do First
+- **Invoke the `frontend-design` skill** before writing any frontend code, every session, no exceptions.
 
-## Project Overview
+## Reference Images
+- If a reference image is provided: match layout, spacing, typography, and color exactly. Swap in placeholder content (images via `https://placehold.co/`, generic copy). Do not improve or add to the design.
+- If no reference image: design from scratch with high craft (see guardrails below).
+- Screenshot your output, compare against reference, fix mismatches, re-screenshot. Do at least 2 comparison rounds. Stop only when no visible differences remain or user says so.
 
-Static HTML website for **Lasse Ketelsen Haus & Hof Service** — a landscaping/craftsman business in Nordfriesland, Germany. No build tools, no package manager, no framework. Open HTML files directly in a browser to preview.
+## Local Server
+- **Always serve on localhost** — never screenshot a `file:///` URL.
+- Start the dev server: `node serve.mjs` (serves the project root at `http://localhost:3000`)
+- `serve.mjs` lives in the project root. Start it in the background before taking any screenshots.
+- If the server is already running, do not start a second instance.
 
-## Files
+## Screenshot Workflow
+- Puppeteer v24.4.0 is installed in `./node_modules/puppeteer/`. Chrome executable: `C:/Users/Erik R/.cache/puppeteer/chrome/win64-146.0.7680.153/chrome-win64/chrome.exe`.
+- **Always screenshot from localhost:** `node screenshot.mjs http://localhost:3000`
+- Screenshots are saved automatically to `./temporary screenshots/screenshot-N.png` (auto-incremented, never overwritten).
+- Optional label suffix: `node screenshot.mjs http://localhost:3000 label` → saves as `screenshot-N-label.png`
+- `screenshot.mjs` lives in the project root. Use it as-is.
+- After screenshotting, read the PNG from `temporary screenshots/` with the Read tool — Claude can see and analyze the image directly.
+- When comparing, be specific: "heading is 32px but reference shows ~24px", "card gap is 16px but should be 24px"
+- Check: spacing/padding, font size/weight/line-height, colors (exact hex), alignment, border-radius, shadows, image sizing
 
-| File | Purpose |
-|---|---|
-| `index.html` | Main website (single page) |
-| `impressum.html` | Legal imprint (§5 TMG) |
-| `datenschutz.html` | Privacy policy (DSGVO) |
-| `bilder/` | Project photos used in gallery and service cards |
-| `Lasse_ketelsen_logo.png` | Square LK monogram logo — works on light backgrounds |
+## Output Defaults
+- Single `index.html` file, all styles inline, unless user says otherwise
+- Tailwind CSS via CDN: `<script src="https://cdn.tailwindcss.com"></script>`
+- Placeholder images: `https://placehold.co/WIDTHxHEIGHT`
+- Mobile-first responsive
 
-## Design System (index.html)
+## Brand Assets
+- Always check the `brand_assets/` folder before designing. It may contain logos, color guides, style guides, or images.
+- If assets exist there, use them. Do not use placeholders where real assets are available.
+- If a logo is present, use it. If a color palette is defined, use those exact values — do not invent brand colors.
 
-**Stack:** Pure HTML + Tailwind CSS via CDN (`cdn.tailwindcss.com`). No compilation step.
+## Anti-Generic Guardrails
+- **Colors:** Never use default Tailwind palette (indigo-500, blue-600, etc.). Pick a custom brand color and derive from it.
+- **Shadows:** Never use flat `shadow-md`. Use layered, color-tinted shadows with low opacity.
+- **Typography:** Never use the same font for headings and body. Pair a display/serif with a clean sans. Apply tight tracking (`-0.03em`) on large headings, generous line-height (`1.7`) on body.
+- **Gradients:** Layer multiple radial gradients. Add grain/texture via SVG noise filter for depth.
+- **Animations:** Only animate `transform` and `opacity`. Never `transition-all`. Use spring-style easing.
+- **Interactive states:** Every clickable element needs hover, focus-visible, and active states. No exceptions.
+- **Images:** Add a gradient overlay (`bg-gradient-to-t from-black/60`) and a color treatment layer with `mix-blend-multiply`.
+- **Spacing:** Use intentional, consistent spacing tokens — not random Tailwind steps.
+- **Depth:** Surfaces should have a layering system (base → elevated → floating), not all sit at the same z-plane.
 
-**Theme name:** "Nordic Craftsman Dark"
-
-**Custom Tailwind colors** (defined in inline `tailwind.config`):
-- `stone-dark` `#141C1A` · `stone` `#1E2B28` · `stone-mid` `#2C3D39`
-- `sand` `#C8B48A` (gold accent) · `sand-light` `#E2D5B8` · `sand-pale` / `cream` `#F4F0E8`
-- `terra` `#A85C3A` (CTA orange-brown) · `terra-light` `#C47A58`
-
-**Fonts:** Bebas Neue (display/headings, renders uppercase) + Source Sans 3 (body). Loaded from Google Fonts.
-
-**Key CSS classes:**
-- `.hero-bg` — dark green gradient background for hero section
-- `.grain::before` — SVG noise texture overlay
-- `.gallery-grid` — CSS grid with responsive `grid-auto-rows` (140px mobile / 200px desktop)
-- `.gallery-item` / `.gallery-overlay` — hover reveals caption overlay
-- `.service-card` — lift + arrow reveal on hover
-- `.btn-pulse` — terra-colored pulsing animation for primary CTA
-
-## Page Structure (index.html sections)
-
-1. `#start` — Hero (fixed header + full-bleed dark gradient)
-2. Trust bar — 3-column strip (always 3 cols, even on mobile)
-3. `#leistungen` — 3 service cards with real photos
-4. `#ueber-uns` — 2-col layout: portrait placeholder + text + floating "10+" badge
-5. `#referenzen` — Gallery grid (9 items, links to Instagram posts)
-6. `#kontakt` — Dark CTA section with email + phone buttons
-7. Footer — 3 columns + bottom bar with Impressum/Datenschutz links
-
-## Gallery (Referenzen)
-
-Each gallery item is an `<a>` linking to an Instagram post. Images come from `bilder/`. Items without a photo use a CSS gradient placeholder (`.ph-stone`, `.ph-earth`, `.ph-garden`, etc.).
-
-**To add/update a gallery item:**
-- Drop the image into `bilder/`
-- Replace `<div class="ph ph-xxx ..."></div>` with `<img src="bilder/filename.png" alt="..." class="w-full h-full object-cover object-center">`
-- Update the `href` to the correct Instagram post URL
-
-**Instagram embeds do NOT work** — Instagram blocks embeds for non-logged-in users since 2024. Use local images instead.
-
-## Company Data
-
-| Field | Value |
-|---|---|
-| Name | Lasse Ketelsen |
-| Legal form | Einzelunternehmer |
-| Address | Horsbüller Str. 18, 25924 Emmelsbüll-Horsbüll |
-| Phone | 04665/2209894 |
-| Email | info@lk-hausundhof.de |
-| Instagram | https://www.instagram.com/lasse__ketelsen/ |
-| Facebook | https://www.facebook.com/lasse.ketelsen.9/ |
-
-## Design Conventions
-
-- All section headings use `font-display` (Bebas Neue) — automatically uppercase
-- Body text: `font-normal` minimum (never `font-light` — too thin on mobile)
-- Opacity for secondary text: `/80` minimum for readability
-- Mobile: Trust bar stays 3-column with `flex-col` items and hidden subtitles (`hidden sm:block`)
-- The `ui-ux-pro-max` skill is available for design system generation — run with `py ".claude/skills/ui-ux-pro-max/scripts/search.py"` (use `py` not `python3` on Windows)
+## Hard Rules
+- Do not add sections, features, or content not in the reference
+- Do not "improve" a reference design — match it
+- Do not stop after one screenshot pass
+- Do not use `transition-all`
+- Do not use default Tailwind blue/indigo as primary color
