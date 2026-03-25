@@ -275,18 +275,19 @@
   <!-- ══════════════════════════════════════════
        2. HERO
   ══════════════════════════════════════════ -->
-  <section id="start" class="hero-bg grain relative min-h-[85vh] lg:min-h-[80vh] flex flex-col justify-end pt-16 lg:pt-[72px]" aria-label="Hero">
+  <section id="start" class="hero-bg grain relative min-h-[60vh] sm:min-h-[70vh] lg:min-h-[60vh] flex flex-col justify-end pt-16 lg:pt-[72px]" aria-label="Hero">
 
     <!-- Decorative coordinate ghost text -->
-    <div class="absolute top-[30%] left-1/2 -translate-x-1/2 pointer-events-none select-none" style="z-index:2">
-      <span class="text-white/10 text-[11px] font-mono tracking-[0.35em] uppercase">54°49′N · 08°45′E · Nordfriesland</span>
+    <div class="absolute top-[72px] left-1/2 -translate-x-1/2 lg:top-[30%] pointer-events-none select-none text-center whitespace-nowrap" style="z-index:2">
+      <div class="text-white/10 text-[11px] font-mono tracking-[0.35em] uppercase">Nordfriesland</div>
+      <div class="text-white/10 text-[11px] font-mono tracking-[0.35em] mt-1">54°49′N · 08°45′E</div>
     </div>
 
     <!-- Vertical accent line left -->
     <div class="absolute left-8 top-0 bottom-0 w-px pointer-events-none hidden lg:block" style="z-index:2; background: linear-gradient(to bottom, transparent 0%, rgba(200,180,138,0.3) 20%, rgba(200,180,138,0.3) 80%, transparent 100%);"></div>
 
     <!-- Hero content -->
-    <div class="relative w-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 pb-14 sm:pb-20 lg:pb-24" style="z-index:3">
+    <div class="relative w-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 pt-16 sm:pt-20 lg:pt-0 pb-14 sm:pb-20 lg:pb-24" style="z-index:3">
 
       <!-- Overline -->
       <div class="flex items-center gap-3 mb-6">
@@ -320,11 +321,6 @@
       </div>
     </div>
 
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-8 right-8 hidden lg:flex flex-col items-center gap-2" style="z-index:3" aria-hidden="true">
-      <span class="text-white/25 text-[10px] tracking-[0.3em] uppercase" style="writing-mode:vertical-rl">Scrollen</span>
-      <div class="w-px h-12" style="background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.2));"></div>
-    </div>
   </section>
 
 
