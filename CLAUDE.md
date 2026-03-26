@@ -46,6 +46,13 @@
 - **Spacing:** Use intentional, consistent spacing tokens — not random Tailwind steps.
 - **Depth:** Surfaces should have a layering system (base → elevated → floating), not all sit at the same z-plane.
 
+## Footer Consistency
+- The footer is identical across all pages (index.html, impressum.html, datenschutz.html)
+- Whenever the footer changes on any page, apply the same change to all three files
+- Only the bottom bar differs: the current page is shown as `<span class="text-white text-xs font-semibold">`, links to other pages use `text-white/60`
+- Footer text minimum opacity: `text-white/75` for body copy, `text-white` for headings — never below `/60`
+- Footer contact: phone `0162 / 4729715` (tel:+491624729715), email `hausundhofservice.ketelsen@gmail.com`
+
 ## Hard Rules
 - Do not add sections, features, or content not in the reference
 - Do not "improve" a reference design — match it
