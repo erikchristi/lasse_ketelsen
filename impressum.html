@@ -59,9 +59,9 @@
       <div class="flex items-center justify-between h-16 lg:h-[72px]">
 
         <!-- Logo -->
-        <a href="index.html" class="flex items-center gap-3 cursor-pointer flex-shrink-0 group" aria-label="Lasse Ketelsen Haus und Hof Service – zur Startseite">
+        <a href="index.html" class="flex items-center gap-3 cursor-pointer flex-shrink-0 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sand" aria-label="Lasse Ketelsen Haus und Hof Service – zur Startseite">
           <img src="brand_assets/LK_Logo-RGB_062024.png" alt="LK Logo" class="w-10 h-10 object-contain flex-shrink-0">
-          <div class="hidden sm:block leading-tight">
+          <div class="leading-tight">
             <div class="text-white font-semibold text-sm tracking-wide">Haus &amp; Hof Service</div>
             <div class="text-sand text-[10px] font-semibold tracking-widest2 uppercase">Lasse Ketelsen</div>
           </div>
@@ -76,36 +76,85 @@
           <a href="index.html#kontakt"    class="nav-link text-sm font-medium tracking-wide cursor-pointer">Kontakt</a>
         </nav>
 
+        <!-- Desktop Social Icons -->
+        <div class="hidden lg:flex items-center gap-2 flex-shrink-0">
+          <a href="https://www.instagram.com/lasse__ketelsen/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+             class="w-9 h-9 border-2 border-sand/50 flex items-center justify-center text-sand hover:bg-sand/10 hover:border-sand transition-colors duration-200 rounded-lg">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/lasse.ketelsen.9/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+             class="w-9 h-9 border-2 border-sand/50 flex items-center justify-center text-sand hover:bg-sand/10 hover:border-sand transition-colors duration-200 rounded-lg">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+            </svg>
+          </a>
+        </div>
+
         <!-- Desktop CTA -->
-        <a href="index.html#kontakt" class="hidden lg:flex items-center gap-2 bg-terra text-white px-5 py-2.5 font-semibold text-sm tracking-wide hover:bg-terra-light transition-colors duration-200 cursor-pointer flex-shrink-0">
+        <a href="mailto:hausundhofservice.ketelsen@gmail.com?subject=Angebotsanfrage" class="hidden lg:flex items-center gap-2 bg-terra text-white px-5 py-2.5 font-semibold text-sm tracking-wide hover:bg-terra-light transition-colors duration-200 cursor-pointer flex-shrink-0 rounded-lg">
           Angebot anfordern
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
 
         <!-- Mobile hamburger -->
-        <button id="burger-btn" class="lg:hidden p-2 text-white cursor-pointer rounded" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+        <button id="burger-btn" class="lg:hidden p-2 text-white cursor-pointer rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sand" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
           <svg id="icon-open"  class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
           <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
       </div>
     </div>
+  </header>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden lg:hidden bg-stone-dark border-t border-sand/10" role="navigation" aria-label="Mobile Navigation">
-      <div class="max-w-7xl mx-auto px-5 py-4 flex flex-col gap-1">
-        <a href="index.html#start"      class="text-white/80 hover:text-white hover:bg-white/5 px-4 py-3 text-sm font-medium tracking-wide transition-colors duration-200 cursor-pointer rounded">Startseite</a>
-        <a href="index.html#leistungen" class="text-white/80 hover:text-white hover:bg-white/5 px-4 py-3 text-sm font-medium tracking-wide transition-colors duration-200 cursor-pointer rounded">Leistungen</a>
-        <a href="index.html#ueber-uns"  class="text-white/80 hover:text-white hover:bg-white/5 px-4 py-3 text-sm font-medium tracking-wide transition-colors duration-200 cursor-pointer rounded">Über uns</a>
-        <a href="index.html#referenzen" class="text-white/80 hover:text-white hover:bg-white/5 px-4 py-3 text-sm font-medium tracking-wide transition-colors duration-200 cursor-pointer rounded">Referenzen</a>
-        <a href="index.html#kontakt"    class="text-white/80 hover:text-white hover:bg-white/5 px-4 py-3 text-sm font-medium tracking-wide transition-colors duration-200 cursor-pointer rounded">Kontakt</a>
-        <div class="pt-3 pb-2">
-          <a href="index.html#kontakt" class="flex items-center justify-center gap-2 bg-terra text-white px-5 py-3.5 font-semibold text-sm tracking-wide hover:bg-terra-light transition-colors duration-200 cursor-pointer">
-            Angebot anfordern
-          </a>
+  <!-- Full-screen mobile menu overlay -->
+  <div id="mobile-menu" class="hidden fixed inset-0 z-[60] bg-stone-dark flex flex-col" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="flex items-center justify-between h-16 px-5 flex-shrink-0 border-b border-sand/10">
+      <a href="index.html" class="flex items-center gap-3" aria-label="Zur Startseite">
+        <img src="brand_assets/LK_Logo-RGB_062024.png" alt="LK Logo" class="w-10 h-10 object-contain flex-shrink-0">
+        <div class="leading-tight">
+          <div class="text-white font-semibold text-sm tracking-wide">Haus &amp; Hof Service</div>
+          <div class="text-sand text-[10px] font-semibold tracking-widest2 uppercase">Lasse Ketelsen</div>
         </div>
+      </a>
+      <button id="burger-close" class="p-2 text-white cursor-pointer rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sand" aria-label="Menü schließen">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav class="flex-1 flex flex-col justify-start pt-8 px-8 gap-1" aria-label="Mobile Navigation">
+      <a href="index.html#start"      class="font-display text-white text-4xl tracking-wide py-3 border-b border-sand/10 hover:text-sand transition-colors duration-200 cursor-pointer">Startseite</a>
+      <a href="index.html#leistungen" class="font-display text-white text-4xl tracking-wide py-3 border-b border-sand/10 hover:text-sand transition-colors duration-200 cursor-pointer">Leistungen</a>
+      <a href="index.html#ueber-uns"  class="font-display text-white text-4xl tracking-wide py-3 border-b border-sand/10 hover:text-sand transition-colors duration-200 cursor-pointer">Über uns</a>
+      <a href="index.html#referenzen" class="font-display text-white text-4xl tracking-wide py-3 border-b border-sand/10 hover:text-sand transition-colors duration-200 cursor-pointer">Referenzen</a>
+      <a href="index.html#kontakt"    class="font-display text-white text-4xl tracking-wide py-3 hover:text-sand transition-colors duration-200 cursor-pointer">Kontakt</a>
+    </nav>
+    <div class="px-8 pb-8 flex-shrink-0 space-y-4">
+      <a href="mailto:hausundhofservice.ketelsen@gmail.com?subject=Angebotsanfrage" class="flex items-center justify-center gap-2 bg-terra text-white px-5 py-4 font-semibold text-sm tracking-wide hover:bg-terra-light transition-colors duration-200 cursor-pointer rounded-lg">
+        Angebot anfordern
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+      <div class="flex items-center gap-3 pt-2 border-t border-sand/10">
+        <a href="https://www.instagram.com/lasse__ketelsen/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+           class="flex items-center gap-2.5 text-sand hover:text-white text-sm font-medium tracking-wide transition-colors duration-200">
+          <span class="w-9 h-9 border-2 border-sand/50 flex items-center justify-center flex-shrink-0 rounded-lg">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none"/>
+            </svg>
+          </span>
+          Instagram
+        </a>
+        <a href="https://www.facebook.com/lasse.ketelsen.9/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+           class="flex items-center gap-2.5 text-sand hover:text-white text-sm font-medium tracking-wide transition-colors duration-200">
+          <span class="w-9 h-9 border-2 border-sand/50 flex items-center justify-center flex-shrink-0 rounded-lg">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+            </svg>
+          </span>
+          Facebook
+        </a>
       </div>
     </div>
-  </header>
+  </div>
 
 
   <!-- ══════════════════════════════════════════
@@ -273,13 +322,13 @@
           </address>
           <div class="flex items-center gap-2 mt-5">
             <a href="https://www.instagram.com/lasse__ketelsen/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
-               class="w-9 h-9 border-2 border-sand/40 flex items-center justify-center text-sand hover:bg-sand/10 hover:border-sand/70 transition-colors duration-200">
+               class="w-9 h-9 border-2 border-sand/40 flex items-center justify-center text-sand hover:bg-sand/10 hover:border-sand/70 transition-colors duration-200 rounded-lg">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
                 <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none"/>
               </svg>
             </a>
             <a href="https://www.facebook.com/lasse.ketelsen.9/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
-               class="w-9 h-9 border-2 border-sand/40 flex items-center justify-center text-sand hover:bg-sand/10 hover:border-sand/70 transition-colors duration-200">
+               class="w-9 h-9 border-2 border-sand/40 flex items-center justify-center text-sand hover:bg-sand/10 hover:border-sand/70 transition-colors duration-200 rounded-lg">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
               </svg>
@@ -296,7 +345,7 @@
               <li><a href="index.html#leistungen" class="text-white/80 hover:text-sand text-sm font-normal transition-colors duration-200 cursor-pointer">Baggerarbeiten &amp; Erdarbeiten</a></li>
               <li><a href="index.html#leistungen" class="text-white/80 hover:text-sand text-sm font-normal transition-colors duration-200 cursor-pointer">Gartenbau &amp; Hofgestaltung</a></li>
               <li><a href="index.html#referenzen" class="text-white/80 hover:text-sand text-sm font-normal transition-colors duration-200 cursor-pointer">Referenzen</a></li>
-              <li><a href="index.html#kontakt"    class="text-white/80 hover:text-sand text-sm font-normal transition-colors duration-200 cursor-pointer">Kontakt &amp; Beratung</a></li>
+              <li><a href="mailto:hausundhofservice.ketelsen@gmail.com?subject=Angebotsanfrage"    class="text-white/80 hover:text-sand text-sm font-normal transition-colors duration-200 cursor-pointer">Kontakt &amp; Beratung</a></li>
             </ul>
           </nav>
         </div>
@@ -339,13 +388,15 @@
   <script>
     document.getElementById('footer-year').textContent = new Date().getFullYear();
 
-    const burgerBtn  = document.getElementById('burger-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const iconOpen   = document.getElementById('icon-open');
-    const iconClose  = document.getElementById('icon-close');
+    const burgerBtn   = document.getElementById('burger-btn');
+    const burgerClose = document.getElementById('burger-close');
+    const mobileMenu  = document.getElementById('mobile-menu');
+    const iconOpen    = document.getElementById('icon-open');
+    const iconClose   = document.getElementById('icon-close');
 
     function openMenu() {
       mobileMenu.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
       iconOpen.classList.add('hidden');
       iconClose.classList.remove('hidden');
       burgerBtn.setAttribute('aria-expanded', 'true');
@@ -353,6 +404,7 @@
     }
     function closeMenu() {
       mobileMenu.classList.add('hidden');
+      document.body.style.overflow = '';
       iconOpen.classList.remove('hidden');
       iconClose.classList.add('hidden');
       burgerBtn.setAttribute('aria-expanded', 'false');
@@ -362,7 +414,7 @@
     burgerBtn.addEventListener('click', () => {
       mobileMenu.classList.contains('hidden') ? openMenu() : closeMenu();
     });
-
+    burgerClose.addEventListener('click', closeMenu);
     mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 
     const header = document.getElementById('site-header');
