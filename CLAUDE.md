@@ -53,6 +53,12 @@
 - Footer text minimum opacity: `text-white/75` for body copy, `text-white` for headings — never below `/60`
 - Footer contact: phone `0162 / 4729715` (tel:+491624729715), email `hausundhofservice.ketelsen@gmail.com`
 
+## Copy Rules
+- **No dashes in copy text** — never use em dashes (—) or hyphens (-) as punctuation in visible copy. Use short sentences or "und" instead.
+- **Hormozi Value Equation** — when writing or reviewing marketing copy, optimize for: Dream Outcome × Perceived Likelihood ÷ (Time Delay × Effort). Always make the outcome vivid, the likelihood high (proof, guarantee), the time short, and the effort minimal.
+- **No guarantee language** — Never write that Lasse "guarantees" anything or is "liable" for results. Use reliability framing instead: "Zuverlässige Partnerschaft", "Was wir vereinbaren, das wird geliefert." This is a legal protection for Lasse.
+- **ICP: Premium customers** — wealthy homeowners who want unique, one-of-a-kind results. Avoid generic/mass-market language. Speak to exclusivity, craftsmanship, and lasting value.
+
 ## Hard Rules
 - Do not add sections, features, or content not in the reference
 - Do not "improve" a reference design — match it
