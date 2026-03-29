@@ -51,20 +51,7 @@
 
     /* ── HERO ── */
     .hero-bg {
-      background:
-        linear-gradient(to bottom,
-          rgba(20,28,26,0.0)  0%,
-          rgba(20,28,26,0.0) 40%,
-          rgba(20,28,26,0.65) 72%,
-          rgba(20,28,26,0.95) 100%),
-        linear-gradient(160deg,
-          #060d0b 0%,
-          #141C1A 18%,
-          #1E3530 35%,
-          #2C4A42 50%,
-          #1E3530 65%,
-          #141C1A 82%,
-          #0A1210 100%);
+      background: #0c1410;
     }
 
     /* ── NAV ── */
@@ -84,11 +71,13 @@
 
     /* ── SERVICE CARDS ── */
     .service-card {
-      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease;
+      background: #FEFCF9;
+      box-shadow: 0 1px 3px rgba(20,28,26,0.04), 0 4px 12px rgba(20,28,26,0.05);
+      transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease;
     }
     .service-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 24px 48px rgba(20,28,26,0.18);
+      transform: translateY(-7px);
+      box-shadow: 0 4px 8px rgba(20,28,26,0.06), 0 14px 30px rgba(20,28,26,0.09), 0 36px 60px rgba(168,92,58,0.07);
     }
     .service-card .card-arrow {
       transform: translateX(-4px);
@@ -96,6 +85,10 @@
       transition: transform 0.25s ease, opacity 0.25s ease;
     }
     .service-card:hover .card-arrow { transform: translateX(0); opacity: 1; }
+    .service-card .card-img {
+      transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .service-card:hover .card-img { transform: scale(1.05); }
 
     /* ── GALLERY ── */
     .gallery-grid { grid-auto-rows: 180px; }
@@ -124,6 +117,27 @@
     .ph-g4 { background: linear-gradient(135deg, #383838 0%, #545050 55%, #303030 100%); }
     .ph-g5 { background: linear-gradient(135deg, #362c18 0%, #4e4428 55%, #342a18 100%); }
     .ph-g6 { background: linear-gradient(135deg, #1e3018 0%, #324824 55%, #1c2c14 100%); }
+
+    /* ── STONE SWATCHES ── */
+    .stone-swatch .swatch-wrap {
+      transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.4s ease;
+    }
+    .stone-swatch:hover .swatch-wrap {
+      transform: scale(1.04) translateY(-4px);
+      box-shadow: 0 12px 28px rgba(20,28,26,0.22);
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-d1 { transition-delay: 0.10s; }
+    .reveal-d2 { transition-delay: 0.20s; }
+    .reveal-d3 { transition-delay: 0.30s; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1 !important; transform: none !important; } }
 
     /* ── CTA PULSE ── */
     @keyframes terra-pulse {
@@ -273,7 +287,14 @@
   ══════════════════════════════════════════ -->
   <section id="start" class="hero-bg grain relative min-h-[60vh] sm:min-h-[70vh] lg:min-h-[60vh] flex flex-col justify-end pt-16 lg:pt-[72px]" aria-label="Hero">
 
-
+    <!-- Background photo layer -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none" style="z-index:0;">
+      <img src="bilder/friesenwall_02.png" alt="" aria-hidden="true" loading="eager"
+           class="w-full h-full object-cover"
+           style="object-position: center 40%; opacity: 0.40; filter: saturate(0.55) brightness(0.80);">
+      <div class="absolute inset-0" style="background: linear-gradient(160deg, rgba(6,13,11,0.72) 0%, rgba(20,28,26,0.35) 40%, rgba(30,53,48,0.30) 60%, rgba(10,18,16,0.72) 100%);"></div>
+      <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(12,20,16,0.38) 0%, rgba(12,20,16,0.32) 35%, rgba(20,28,26,0.78) 68%, rgba(20,28,26,0.99) 100%);"></div>
+    </div>
 
     <!-- Vertical accent line left -->
     <div class="absolute left-8 top-0 bottom-0 w-px pointer-events-none hidden lg:block" style="z-index:2; background: linear-gradient(to bottom, transparent 0%, rgba(200,180,138,0.3) 20%, rgba(200,180,138,0.3) 80%, transparent 100%);"></div>
@@ -331,7 +352,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-sand/10">
 
         <div class="flex flex-row items-center gap-4 px-5 sm:px-6 py-4 sm:py-5">
-          <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center border border-sand/20">
+          <div class="w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl border border-sand/20" style="background: rgba(200,180,138,0.07);">
             <svg class="w-5 h-5 text-sand" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
@@ -343,7 +364,7 @@
         </div>
 
         <div class="flex flex-row items-center gap-4 px-5 sm:px-6 py-4 sm:py-5">
-          <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center border border-sand/20">
+          <div class="w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl border border-sand/20" style="background: rgba(200,180,138,0.07);">
             <svg class="w-5 h-5 text-sand" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253M3.284 14.253A8.959 8.959 0 013 12c0-.778.099-1.533.284-2.253"/>
             </svg>
@@ -355,7 +376,7 @@
         </div>
 
         <div class="flex flex-row items-center gap-4 px-5 sm:px-6 py-4 sm:py-5">
-          <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center border border-sand/20">
+          <div class="w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl border border-sand/20" style="background: rgba(200,180,138,0.07);">
             <svg class="w-5 h-5 text-sand" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
             </svg>
@@ -393,8 +414,8 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
 
         <!-- Card 1 -->
-        <article class="service-card bg-white group cursor-pointer border border-sand/30 hover:border-terra/40 transition-colors duration-300 rounded-2xl overflow-hidden">
-          <img src="bilder/friesenwall.png" alt="Naturstein Friesenwall" class="h-52 w-full object-cover object-center rounded-xl">
+        <article class="service-card group cursor-pointer border border-sand/30 hover:border-terra/40 transition-colors duration-300 rounded-2xl overflow-hidden">
+          <div class="overflow-hidden rounded-xl"><img src="bilder/friesenwall.png" alt="Naturstein Friesenwall" class="card-img h-52 w-full object-cover object-center"></div>
           <div class="p-6 lg:p-7">
             <div class="flex items-start justify-between mb-3">
               <span class="text-terra text-[10px] font-semibold tracking-widest2 uppercase">01</span>
@@ -421,8 +442,8 @@
         </article>
 
         <!-- Card 2 -->
-        <article class="service-card bg-white group cursor-pointer border border-sand/30 hover:border-terra/40 transition-colors duration-300 rounded-2xl overflow-hidden">
-          <img src="bilder/baggerarbeiten.png" alt="Baggerarbeiten und Erdarbeiten" class="h-52 w-full object-cover object-center rounded-xl">
+        <article class="service-card group cursor-pointer border border-sand/30 hover:border-terra/40 transition-colors duration-300 rounded-2xl overflow-hidden">
+          <div class="overflow-hidden rounded-xl"><img src="bilder/baggerarbeiten.png" alt="Baggerarbeiten und Erdarbeiten" class="card-img h-52 w-full object-cover object-center"></div>
           <div class="p-6 lg:p-7">
             <div class="flex items-start justify-between mb-3">
               <span class="text-terra text-[10px] font-semibold tracking-widest2 uppercase">02</span>
@@ -449,8 +470,8 @@
         </article>
 
         <!-- Card 3 -->
-        <article class="service-card bg-white group cursor-pointer border border-sand/30 hover:border-terra/40 transition-colors duration-300 rounded-2xl overflow-hidden">
-          <img src="bilder/gartenbau_und_hofgestaltung.png" alt="Gartenbau und Hofgestaltung" class="h-52 w-full object-cover object-center rounded-xl">
+        <article class="service-card group cursor-pointer border border-sand/30 hover:border-terra/40 transition-colors duration-300 rounded-2xl overflow-hidden">
+          <div class="overflow-hidden rounded-xl"><img src="bilder/gartenbau_und_hofgestaltung.png" alt="Gartenbau und Hofgestaltung" class="card-img h-52 w-full object-cover object-center"></div>
           <div class="p-6 lg:p-7">
             <div class="flex items-start justify-between mb-3">
               <span class="text-terra text-[10px] font-semibold tracking-widest2 uppercase">03</span>
@@ -484,7 +505,7 @@
   <!-- ══════════════════════════════════════════
        5. NATURSTEINE
   ══════════════════════════════════════════ -->
-  <section id="natursteine" class="py-20 sm:py-28 bg-sand-pale" aria-label="Natursteine">
+  <section id="natursteine" class="py-20 sm:py-28" style="background: #EDE8DC;" aria-label="Natursteine">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
 
       <!-- Section header -->
@@ -503,8 +524,8 @@
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-5 mb-10">
 
         <!-- Findlinge -->
-        <div class="group cursor-default">
-          <div class="aspect-square mb-4 overflow-hidden" style="background: linear-gradient(135deg, #4a4540 0%, #6a6258 45%, #524a44 100%);">
+        <div class="stone-swatch group cursor-default">
+          <div class="swatch-wrap aspect-square mb-4 overflow-hidden rounded-lg" style="background: linear-gradient(135deg, #4a4540 0%, #6a6258 45%, #524a44 100%);">
             <img src="https://placehold.co/400x400/4a4540/9a9288?text=Findling" alt="Findling Naturstein" class="w-full h-full object-cover opacity-0" onerror="this.style.opacity='0'">
           </div>
           <div class="text-terra text-[10px] font-semibold tracking-widest2 uppercase mb-1">01</div>
@@ -513,8 +534,8 @@
         </div>
 
         <!-- Roter Granit -->
-        <div class="group cursor-default">
-          <div class="aspect-square mb-4 overflow-hidden" style="background: linear-gradient(135deg, #5a3830 0%, #7a4a40 45%, #8a5248 100%);">
+        <div class="stone-swatch group cursor-default">
+          <div class="swatch-wrap aspect-square mb-4 overflow-hidden rounded-lg" style="background: linear-gradient(135deg, #5a3830 0%, #7a4a40 45%, #8a5248 100%);">
             <img src="https://placehold.co/400x400/5a3830/c09088?text=Roter+Granit" alt="Roter Granit" class="w-full h-full object-cover opacity-0" onerror="this.style.opacity='0'">
           </div>
           <div class="text-terra text-[10px] font-semibold tracking-widest2 uppercase mb-1">02</div>
@@ -523,8 +544,8 @@
         </div>
 
         <!-- Schwarzer Diabas -->
-        <div class="group cursor-default">
-          <div class="aspect-square mb-4 overflow-hidden" style="background: linear-gradient(135deg, #1a1e1c 0%, #2e3230 45%, #222826 100%);">
+        <div class="stone-swatch group cursor-default">
+          <div class="swatch-wrap aspect-square mb-4 overflow-hidden rounded-lg" style="background: linear-gradient(135deg, #1a1e1c 0%, #2e3230 45%, #222826 100%);">
             <img src="https://placehold.co/400x400/1a1e1c/4a4e4c?text=Schwarzer+Diabas" alt="Schwarzer Diabas" class="w-full h-full object-cover opacity-0" onerror="this.style.opacity='0'">
           </div>
           <div class="text-terra text-[10px] font-semibold tracking-widest2 uppercase mb-1">03</div>
@@ -533,8 +554,8 @@
         </div>
 
         <!-- Sandstein -->
-        <div class="group cursor-default">
-          <div class="aspect-square mb-4 overflow-hidden" style="background: linear-gradient(135deg, #7a6040 0%, #9a7c54 45%, #887048 100%);">
+        <div class="stone-swatch group cursor-default">
+          <div class="swatch-wrap aspect-square mb-4 overflow-hidden rounded-lg" style="background: linear-gradient(135deg, #7a6040 0%, #9a7c54 45%, #887048 100%);">
             <img src="https://placehold.co/400x400/7a6040/c8a878?text=Sandstein" alt="Sandstein" class="w-full h-full object-cover opacity-0" onerror="this.style.opacity='0'">
           </div>
           <div class="text-terra text-[10px] font-semibold tracking-widest2 uppercase mb-1">04</div>
@@ -543,8 +564,8 @@
         </div>
 
         <!-- Kalkstein -->
-        <div class="group cursor-default col-span-2 sm:col-span-1">
-          <div class="aspect-square mb-4 overflow-hidden" style="background: linear-gradient(135deg, #c0b8a8 0%, #d4cebe 45%, #bab2a2 100%);">
+        <div class="stone-swatch group cursor-default col-span-2 sm:col-span-1">
+          <div class="swatch-wrap aspect-square mb-4 overflow-hidden rounded-lg" style="background: linear-gradient(135deg, #c0b8a8 0%, #d4cebe 45%, #bab2a2 100%);">
             <img src="https://placehold.co/400x400/c0b8a8/706860?text=Kalkstein" alt="Kalkstein" class="w-full h-full object-cover opacity-0" onerror="this.style.opacity='0'">
           </div>
           <div class="text-terra text-[10px] font-semibold tracking-widest2 uppercase mb-1">05</div>
@@ -675,7 +696,7 @@
   <!-- ══════════════════════════════════════════
        7. REFERENZEN / GALERIE
   ══════════════════════════════════════════ -->
-  <section id="referenzen" class="py-20 sm:py-28 bg-cream" aria-label="Referenzen">
+  <section id="referenzen" class="py-20 sm:py-28" style="background: #F9F7F3;" aria-label="Referenzen">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
 
       <!-- Section header -->
@@ -975,6 +996,17 @@
     }
     window.addEventListener('scroll', updateHeader, { passive: true });
     updateHeader();
+
+    /* ── Scroll reveal ── */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.10, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
   </script>
 
 </body>
